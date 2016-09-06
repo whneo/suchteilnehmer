@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Suche Teilnehmer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function loadDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ausgabe").value = this.responseText;
+                    }
+                };
+                xhttp.open("POST", "suche.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("zahl1=" + document.getElementById('zahl1').value + "&zahl2=" + document.getElementById('zahl2').value);
+            }
+
+            var berechne = function () {
+                loadDoc();
+            };
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <p><b>Stadt:</b> <input id="potsdam" type="radio" name="abfrage" value="1" />Potsdam
+                <input id="berlin" type="radio" name="abfrage" value="2" />Berlin</p><br>
+            <input type="submit" value="suche Teilnehmer" />
+            <input type="hidden" name="sent" value="" />
+        </div>
+        <div id="ausgabe">
+
+        </div>
+    </body>
+</html>
