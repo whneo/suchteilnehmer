@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>suche Teilnehmer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <p><b>Stadt:</b> <input id="potsdam" type="radio" name="abfrage" value="" />Potsdam
+            <input id="berlin" type="radio" name="abfrage" value="" />Berlin</p><br>
+            <input type="submit" value="suche Teilnehmer" />
+        </div>
+    </body>
+</html>

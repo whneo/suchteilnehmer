@@ -1,0 +1,15 @@
+CREATE TABLE `stadt` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`name` varchar(250) DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `teilnehmer` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`vorname` varchar(250) DEFAULT NULL,
+`nachname` varchar(250) DEFAULT NULL,
+`stadt_id` int(11) NOT NULL,
+PRIMARY KEY (`id`),
+FOREIGN KEY (`stadt_id`) REFERENCES `stadt` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

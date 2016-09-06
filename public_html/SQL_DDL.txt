@@ -1,0 +1,20 @@
+-- DMLs DummyDatensätze wiederherstellen
+
+-- Datenbank bewohner
+use bewohner;
+
+-- alle DS in allen Tabellen löschen,
+-- AUTO_INCREMENT auf 1 setzen
+TRUNCATE teilnehmer;
+DELETE FROM stadt;
+ALTER TABLE teilnehmer AUTO_INCREMENT=1;
+
+-- Städte
+INSERT INTO stadt VALUES (NULL, "Berlin");
+INSERT INTO stadt VALUES (NULL, "Potsdam");
+
+-- Teilnehmer
+INSERT INTO teilnehmer VALUES (NULL, "Peter", "Pan", 1);
+INSERT INTO teilnehmer VALUES (NULL, "Claudia", "Klein", 2);
+INSERT INTO teilnehmer VALUES (NULL, "Mustafa", "Grün", 1);
+INSERT INTO teilnehmer VALUES (NULL, "Susi", "Sorglos", 1);
